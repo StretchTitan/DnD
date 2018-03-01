@@ -1,61 +1,34 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { Text, View, ScrollView, Button } from 'react-native';
 import { connect } from 'react-redux';
 
-const styles = StyleSheet.create({
-    view: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '#F5FCFF',
-        borderBottomColor: '#8E8E93',
-        borderBottomWidth: 1
-    },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
-    reminder: {
-        marginBottom: 10,
-        marginLeft: 20,
-        fontSize: 20
-    },
-    scrollview: {
-        flex: 1,
-        alignSelf: 'stretch'
-    }
-});
+import { getSpells } from './Model/SpellsService';
+import { spellsStyles } from './Styles';
+import Spell from './View/Spell';
+
+import seedSpells from '../../../api/seeding/seed_spells';
 
 class Spells extends Component {
+    componentWillMount() {
+        this.props.getSpells();
+    }
+
     render() {
         const { spells } = this.props;
 
         return (
-            <View style={styles.view}>
-                <Text style={styles.welcome}>Spells</Text>
-                <ScrollView style={styles.scrollview}>
-                    { spells.map((reminder, i) => {
-                        return (
-                            <Text style={styles.reminder} key={ i }>{ reminder.name }</Text>
-                        );
-                    }) }
-                    { spells.map((reminder, i) => {
-                        return (
-                            <Text style={styles.reminder} key={ i }>{ reminder.name }</Text>
-                        );
-                    }) }
-                    { spells.map((reminder, i) => {
-                        return (
-                            <Text style={styles.reminder} key={ i }>{ reminder.name }</Text>
-                        );
-                    }) }
+            <View style={spellsStyles.view}>
+                <Text style={spellsStyles.welcome}>Spells</Text>
+                <ScrollView style={spellsStyles.scrollview}>
+                    { spells.map((spell, i) => <Spell spell={ spell } key={ i } />) }
                 </ScrollView>
+                {/* <Button title="seed spells" onPress={ seedSpells } /> */}
             </View>
         );
     }
 }
 
 const mapStateToProps = ({ SpellsReducer: { spells } }) => ({ spells });
+const mapDispatchToProps = { getSpells };
 
-export default connect(mapStateToProps)(Spells);
+export default connect(mapStateToProps, mapDispatchToProps)(Spells);
