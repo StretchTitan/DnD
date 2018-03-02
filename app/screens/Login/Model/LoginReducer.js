@@ -1,8 +1,8 @@
 const prefix = 'LOGIN',
     initialState = {
 		isLoggedIn: false,
-		UserName: '',
-		Password: ''
+		username: 'christopher.breit0000@gmail.com',
+		password: 'tester123'
     };
 
 export default LoginReducer = (state = { ...initialState }, action) => {
