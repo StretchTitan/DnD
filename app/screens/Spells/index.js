@@ -18,7 +18,6 @@ class Spells extends Component {
 
         return (
             <View style={spellsStyles.view}>
-                <Text style={spellsStyles.welcome}>Spells</Text>
                 <ScrollView style={spellsStyles.scrollview}>
                     { spells.map((spell, i) => <Spell spell={ spell } key={ i } />) }
                 </ScrollView>

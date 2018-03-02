@@ -9,11 +9,6 @@ export const spellsStyles = StyleSheet.create({
         borderBottomColor: '#8E8E93',
         borderBottomWidth: 1
     },
-    welcome: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
-    },
     spellContainer: {
         padding: 10,
         borderBottomColor: '#8E8E93',
@@ -23,7 +18,34 @@ export const spellsStyles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignSelf: 'stretch',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginBottom: 10
+    },
+    spellTextAndLabel: {
+        flex: 0.5
+    },
+    spellLabel: {
+        fontSize: 16,
+        fontWeight: 'bold'
+    },
+    spellText: {
+        fontSize: 16
+    },
+    spellName: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        marginBottom: 5
+    },
+    spellExpander: {
+        flex: 1
+    },
+    spellExpanderLabel: {
+        fontSize: 16,
+        fontWeight: 'bold'
+    },
+    spellExpanderText: {
+        fontSize: 14,
+        marginBottom: 10
     },
     scrollview: {
         flex: 1,
