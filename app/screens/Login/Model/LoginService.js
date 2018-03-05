@@ -6,10 +6,7 @@ const login = () => (dispatch, getState) => {
     const { username, password } = getState().LoginReducer;
 
     firebase.auth().signInAndRetrieveDataWithEmailAndPassword(username, password).then(
-        response => {
-            console.log(response);
-            return dispatch(setLogin(true))
-        }
+        response => dispatch(setLogin(true))
     ).catch(
         error => console.log(error)
     );

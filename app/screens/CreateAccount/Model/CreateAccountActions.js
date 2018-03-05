@@ -7,4 +7,4 @@ const handleAccountInfo = (field, value) => ({
     }
 });
 
-export { handleCreds }
+export { handleAccountInfo }

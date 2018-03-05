@@ -9,7 +9,7 @@ import { loginStyles } from './Styles';
 
 class Login extends Component {
     render() {
-        const { username, password, login, handleCreds } = this.props;
+        const { username, password, login, handleCreds, navigator } = this.props;
 
         return (
             <View style={ loginStyles.container }>
@@ -34,6 +34,11 @@ class Login extends Component {
                         <TouchableOpacity onPress={ login }>
                             <View style={ loginStyles.loginButton }>
                                 <Text style={ loginStyles.loginButtonText }>Sign In iOS</Text>
+                            </View>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={ () => navigator.push({ screen: 'NativePOC.CreateAccount', title: 'Create Account' }) }>
+                            <View style={ loginStyles.loginButton }>
+                                <Text style={ loginStyles.loginButtonText }>Create Account</Text>
                             </View>
                         </TouchableOpacity>
                     </View>
