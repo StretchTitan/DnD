@@ -10,7 +10,7 @@
   "dependencies": {
     "axios": "0.18.1",
     "babel-core": "6.26.0",
-    "lodash": "4.17.5",
+    "lodash": "4.17.13",
     "react": "16.2.0",
     "react-native": "0.53.0",
     "react-native-collapsible": "0.10.0",
