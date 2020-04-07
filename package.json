@@ -8,7 +8,7 @@
     "android-emulator": "~/Library/Android/sdk/emulator/emulator @Nexus_6_API_23"
   },
   "dependencies": {
-    "axios": "0.17.1",
+    "axios": "0.18.1",
     "babel-core": "6.26.0",
     "lodash": "4.17.5",
     "react": "16.2.0",
